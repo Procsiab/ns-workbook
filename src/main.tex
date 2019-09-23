@@ -1,0 +1,93 @@
+%! TEX root = main.tex
+% Stile del documento
+\documentclass[12pt,openany]{amsbook}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=1.8cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=1.8cm,headsep=1cm,footskip=1cm}
+% Localizzazione (traduce nomi automatici nella lingua selezionata)
+\usepackage[italian]{babel}
+% Altri pacchetti per la formattazione
+\usepackage{lmodern}
+\usepackage{hyphenat}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{enumerate}
+\usepackage{graphicx}
+ % Impostazioni dei metadati del PDF
+\usepackage[unicode=true, bookmarks=true, bookmarksnumbered=true, bookmarksopen=true, bookmarksopenlevel=1, breaklinks=false, pdfborder={0 0 0}, pdfborderstyle={}, backref=page, colorlinks=false]
+{hyperref}
+\hypersetup{
+    pdftitle={Eserciziario di Sicurezza delle Reti},
+    pdfauthor={Lorenzo Prosseda},
+    pdfsubject={Corso di Sicurezza delle reti del prof. Bregni, Politecnico di Milano 2019\---2020},
+    pdfkeywords={sicurezza, reti, crittografia}
+}
+% Percorso della cartella contenente le immagini
+\graphicspath{ {../img/} }
+% Impostazioni di stile per gli ambienti teorema, definizione, esempio, ecc
+\theoremstyle{plain}
+\newtheorem{thm}{Teorema}[section] % resetta numerazione ad ogni capitolo
+\renewcommand{\thethm}{\arabic{chapter}.\arabic{section}.\arabic{thm}} % numerazione ambienti teorema
+\numberwithin{equation}{section} % numerazione equazioni
+% Definizione ambienti personalizzati
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definizione}
+\newtheorem{exmp}[thm]{Esempio}
+\newtheorem{obsv}[thm]{Osservazione}
+\theoremstyle{remark}
+\newtheorem{note}[thm]{Nota}
+% Numerazione personalizzata sezioni e sottosezioni
+\renewcommand\thesection{\thechapter.\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+% Comando trattino "non spezzante" evita sillabazione sul trattino
+\newcommand\nbdash{\nobreakdash-\hspace{0pt}}
+% Non spezzare e seguenti parole:
+\hyphenation{Definizione}
+\hyphenation{Osservazione}
+\hyphenation{Equazione}
+\hyphenation{Teorema}
+\hyphenation{Nota}
+% Solleva posizione lettera greca chi minuscola
+\usepackage{letltxmacro}
+\LetLtxMacro{\lowchi}{\chi}
+\renewcommand\chi{\text{\raisebox{2pt}{$\lowchi$}}}
+
+% Comando per ambiente problema e soluzione
+\newcounter{problem}
+\newcounter{solution}
+\newcommand\Problem[1]{%
+  \stepcounter{problem}%
+  \bigskip
+  \textbf{Esercizio \theproblem.}~\emph{(#1)}~%
+  \setcounter{solution}{0}%
+}
+\newcommand\TheSolution{%
+  \textbf{Soluzione}\\%
+}
+\newcommand\ASolution[1]{%
+  \stepcounter{solution}%
+  \bigskip
+  \textbf{Soluzione \thesolution:}\hfill\emph{(#1)}\\%
+}
+
+% In questo ambiente risiede il contenuto del documento
+\begin{document}
+    % Pagina del titolo
+    \input{title}
+
+    % Genera indice di capitoli e sezioni
+    \tableofcontents
+
+    % Includi file dei capitoli
+    \part{Esercizi}
+    \include{chap1}
+
+    \part{Soluzioni}
+    \include{chap1-s}
+
+\end{document}

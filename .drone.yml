@@ -1,0 +1,40 @@
+---
+kind: pipeline
+name: default
+
+platform:
+  os: linux
+  arch: arm
+
+steps:
+- name: compile
+  image: docker.io/procsiab/texlive-rpi-it
+  commands:
+  - make all
+
+- name: deploy
+  image: appleboy/drone-scp
+  settings:
+    host: 192.168.1.100
+    username: astro
+    key:
+      from_secret: astro-drone-key
+    port: 22
+    target: /srv/fs-data/
+    source: pdf/ns-workbook.pdf
+    strip_components: 1
+  when:
+    branch:
+    - master
+    status:
+    - success
+
+volumes:
+- name: files
+  host:
+    path: /srv/fs-data
+---
+kind: signature
+hmac: e27d3e41e7bfb3c5fbea981fd68f3db71315bd62f6d76698f09017b35ebdaee9
+
+...

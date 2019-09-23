@@ -1,0 +1,13 @@
+# Ignora file intermedi generati dal compilatore LaTeX
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+# Ignora file temporanei e di sessione di VIM
+*.swp
+*.vim
+# Ignora la cartella di lavoro del makefile
+pdf/
