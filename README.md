@@ -1,6 +1,6 @@
 # ns-workbook
 
-[![Build Status](https://img.shields.io/drone/build/Procsiab/psi-2019?server=https%3A%2F%2Fci.procsiab.cf)](https://ci.procsiab.cf/Procsiab/psi-2019)
+[![Build Status](https://ci.procsiab.cf/api/badges/Procsiab/ns-workbook/status.svg)](https://ci.procsiab.cf/Procsiab/ns-workbook)
 [![Website](https://img.shields.io/website/https/book.procsiab.cf?down_message=offline&up_message=online)](https://book.procsiab.cf/)
 [![Static](https://img.shields.io/badge/licenza-GFDLv1.3-yellowgreen.svg)](https://github.com/Procsiab/psi-2019/blob/master/LICENSE)
 
