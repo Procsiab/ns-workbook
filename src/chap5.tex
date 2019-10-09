@@ -1,0 +1,137 @@
+%! TEX root = main.tex
+% Capitolo 5
+
+\chapter{Sequenze binarie pseudo-casuali}
+
+    \bigskip
+    \section{Generatore di Blum, Blum e Shub}
+        \Problem{27/02/2013}
+        Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
+        per $p=7,\, q=11,\, x=5$ e determinarne il periodo.
+
+        \Problem{01/09/2014}
+        Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
+        per $p=19,\, q=31,\, x=9$ e determinarne il periodo.
+
+        \Problem{17/07/2015}
+        Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
+        per $p=23,\, q=31,\, x=5$ e determinarne il periodo.
+
+        \Problem{04/07/2016}
+        \begin{enumerate}
+            \item Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
+                per $p=19,\, q=31,\, x=3$ e determinarne il periodo.
+            \item In base alla teoria, quali sono i valori possibili che può assumere il periodo $P = \pi(x_0)$ del 
+                generatore ottenuto al punto precedente, per valori arbitrari del seme $x_0 =x^2 \in\mathbb{Z}_n$?\\
+                Si ricorda che $\pi(x_0)$ divide $\lambda(\lambda(n))$, dove 
+                $\lambda(n)=\mathrm{mcm}\left(\{\varphi(p^{a_i}_i)\}\right)$ è la funzione di Carmichael.
+        \end{enumerate}
+
+        \Problem{09/02/2017}
+        \begin{enumerate}
+            \item Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
+                per $p=23,\, q=43,\, x=6$ e determinarne il periodo.
+            \item In base alla teoria, quali sono i valori possibili che può assumere il periodo $P = \pi(x_0)$ del 
+                generatore ottenuto al punto precedente, per valori arbitrari del seme $x_0 =x^2 \in\mathbb{Z}_n$?\\
+                Si ricorda che $\pi(x_0)$ divide $\lambda(\lambda(n))$, dove 
+                $\lambda(n)=\mathrm{mcm}\left(\{\varphi(p^{a_i}_i)\}\right)$ è la funzione di Carmichael.
+        \end{enumerate}
+
+        \Problem{09/02/2017}
+        \begin{enumerate}
+            \item Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
+                per $p=23,\, q=47,\, x=48$ e determinarne il periodo.
+            \item In base alla teoria, quali sono i valori possibili che può assumere il periodo $P = \pi(x_0)$ del 
+                generatore ottenuto al punto precedente, per valori arbitrari del seme $x_0 =x^2 \in\mathbb{Z}_n$?\\
+                Si ricorda che $\pi(x_0)$ divide $\lambda(\lambda(n))$, dove 
+                $\lambda(n)=\mathrm{mcm}\left(\{\varphi(p^{a_i}_i)\}\right)$ è la funzione di Carmichael.
+        \end{enumerate}
+
+    \bigskip
+    \section{Scrambler additivo}
+        \Problem{11/07/2013}
+        Si disegni lo schema di uno scrambler additivo avente polinomio caratteristico $1+x^2 +x^3 =x^5$. Quale 
+        sarà il massimo periodo della sequenza PRBS generata, avendo tutti ``0'' in ingresso?
+
+        \Problem{25/09/2013}
+        \begin{enumerate}
+            \item Si disegni la figura di uno scrambler additivo avente polinomio caratteristico $P(x)= 1+x +x^2 +x^4$. 
+                Si indichi la sequenza binaria in ingresso con $\{I_k\}$, quella in uscita con $\{U_k\}$ e quella 
+                pseudo\nbdash casuale generata con $\{R_k\}$.
+            \item Si inizializzi lo scrambler con  ``1'' negli elementi di ritardo $D_1$ e $D_2$ e con ``0'' negli elementi 
+                $D_3$ e $D_4$; lo si alimenti con una sequenza in ingresso di soli ``1''. Ricavare la sequenza $\{U_k\}$ 
+                all'uscita, evidenziando la sua periodicità: qual è il periodo di tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile.
+        \end{enumerate}
+
+        \Problem{23/09/2016}
+        \begin{enumerate}
+            \item Si disegni la figura di uno scrambler additivo avente polinomio caratteristico $P(x)= 1+x +x^3 +x^4$. 
+                Si indichi la sequenza binaria in ingresso con $\{I_k\}$, quella in uscita con $\{U_k\}$ e quella 
+                pseudo\nbdash casuale generata con $\{R_k\}$.
+            \item Si inizializzi lo scrambler con  ``1'' negli elementi di ritardo $D_1$ e con ``0'' negli elementi 
+                $D_2$, $D_3$ e $D_4$; lo si alimenti con una sequenza in ingresso di soli ``1''. Ricavare la 
+                sequenza $\{U_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile.
+        \end{enumerate}
+
+    \bigskip
+    \section{Scrambler autosincronizzante}
+        \Problem{18/07/2014}
+        \begin{enumerate}
+            \item Si disegni la figura di uno scrambler autosincronizzante avente polinomio caratteristico 
+                $P(x)= 1 +x^2 +x^4$. Si indichi la sequenza binaria in ingresso con $\{I_k\}$ e quella in 
+                uscita con $\{U_k\}$.
+            \item Si inizializzi lo scrambler con  ``1'' negli elementi di ritardo $D_1$ e con ``0'' negli elementi 
+                $D_2$, $D_3$ e $D_4$; lo si alimenti con una sequenza in ingresso di soli ``1''. Ricavare la 
+                sequenza $\{U_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile.
+        \end{enumerate}
+
+        \Problem{03/07/2015}
+        \begin{enumerate}
+            \item Si disegni la figura di uno scrambler autosincronizzante avente polinomio caratteristico 
+                $P(x)= 1 +x^4$. Si indichi la sequenza binaria in ingresso con $\{I_k\}$ e quella in 
+                uscita con $\{U_k\}$.
+            \item Si inizializzi lo scrambler con  ``1'' negli elementi di ritardo $D_i$; lo si alimenti con una 
+                sequenza in ingresso di soli ``1''. Ricavare la sequenza $\{U_k\}$ all'uscita, evidenziando la sua 
+                periodicità: qual è il periodo di tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile.
+        \end{enumerate}
+
+        \Problem{30/08/2018}
+        \begin{enumerate}
+            \item Si disegni la figura di uno scrambler autosincronizzante avente polinomio caratteristico 
+                $P(x)= 1 +x +x^3 +x^4$, alimentato da una sequenza di soli ``0'' in ingresso e usato come generatore PRBS. 
+                Si indichi la sequenza binaria in ingresso con $\{I_k\}=\{0\}$ e quella in uscita con $\{R_k\}$.
+            \item Si inizializzi lo scrambler con $D_i(i=1,\,2,\,3,\,4)$ con $\{1,\,0,\,0,\,0\}$ al passo $k=0$. 
+                Ricavare la sequenza $\{R_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di 
+                tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile. Se lo fosse, quali sarebbero i valori 
+                possibili per il periodo?
+        \end{enumerate}
+
+        \Problem{11/02/2019}
+        \begin{enumerate}
+            \item Si disegni la figura di uno scrambler autosincronizzante avente polinomio caratteristico 
+                $P(x)= 1 +x +x^2 +x^4$, alimentato da una sequenza di soli ``0'' in ingresso e usato come generatore PRBS. 
+                Si indichi la sequenza binaria in ingresso con $\{I_k\}=\{0\}$ e quella in uscita con $\{R_k\}$.
+            \item Si inizializzi lo scrambler con $D_i(i=1,\,2,\,3,\,4)$ con $\{1,\,1,\,0,\,0\}$ al passo $k=0$. 
+                Ricavare la sequenza $\{R_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di 
+                tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile. Se lo fosse, quali sarebbero i valori 
+                possibili per il periodo?
+        \end{enumerate}
+
+        \Problem{02/07/2019}
+        \begin{enumerate}
+            \item Si disegni lo schema di un generatore PRBS basato su registro a scorrimento LFSR, realizzato con uno 
+                scrambler autosincronizzante avente polinomio caratteristico $P(x)= 1 +x^2 +x^4$, alimentato da una 
+                sequenza di soli ``0'' in ingresso. Si indichi la sequenza binaria in ingresso con $\{I_k\}=\{0\}$ e 
+                quella in uscita con $\{R_k\}$.
+            \item Si inizializzi lo scrambler con $D_i(i=1,\,2,\,3,\,4)$ con $\{0,\,1,\,0,\,0\}$ al passo $k=0$. 
+                Ricavare la sequenza $\{R_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di 
+                tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile. Se lo fosse, quali sarebbero i valori 
+                possibili per il periodo?
+        \end{enumerate}

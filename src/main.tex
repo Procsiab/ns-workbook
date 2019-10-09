@@ -56,6 +56,13 @@
 \usepackage{letltxmacro}
 \LetLtxMacro{\lowchi}{\chi}
 \renewcommand\chi{\text{\raisebox{2pt}{$\lowchi$}}}
+% Usa spaziatura corretta attorno a modulo
+\renewcommand\mod{\,\mathrm{mod}\,}
+
+% Comando per congruenza in modulo
+\newcommand\cgm[3]{%
+  #1\equiv\,#2\,(\mathrm{mod}\,#3)%
+}
 
 % Comando per ambiente problema e soluzione
 \newcounter{problem}
@@ -88,10 +95,14 @@
     \include{chap1}
     \include{chap2}
     \include{chap3}
+    \include{chap4}
+    \include{chap5}
 
     %\part{Soluzioni}
     %\include{chap1-s}
     %\include{chap2-s}
     %\include{chap3-s}
+    %\include{chap4-s}
+    %\include{chap5-s}
 
 \end{document}
