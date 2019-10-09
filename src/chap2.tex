@@ -1,451 +1,136 @@
 %! TEX root = main.tex
-% Capitolo 2
 
-\chapter{Crittografia a chiave asimmetrica}
-
-    \bigskip
-    \section{Crittosistema a chiave pubblica RSA}
-        \Problem{11/07/2013}
-        Bob adotta il sistema di cifratura a chiave pubblica RSA, pubblicando il modulo $n=323$ e 
-        l'esponente di cifratura $e=17$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti sulla base delle ipotesi del metodo RSA.
-            \item Alice trasmette il messaggio cifrato $C=55$; calcolare il messaggio in chiaro $P$.
-            \item Alice vuole inviare il messaggio in chiaro $P=55$; calcolare il corrispondente messaggio 
-                cifrato $C$.
-        \end{enumerate}
-
-        \Problem{04/07/2014}
-        Bob adotta il sistema di cifratura a chiave pubblica RSA, pubblicando il modulo $n=2867$ e 
-        l'esponente di cifratura $e=677$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti sulla base delle ipotesi del metodo RSA.
-            \item Alice trasmette il messaggio cifrato $C=16$; calcolare il messaggio in chiaro $P$.
-        \end{enumerate}
-
-        \Problem{17/09/2014}
-        Bob adotta il sistema di cifratura a chiave pubblica RSA, pubblicando il modulo $n=3953$ e 
-        l'esponente di cifratura $e=1225$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti sulla base delle ipotesi del metodo RSA.
-            \item Alice trasmette il messaggio cifrato $C=100$; calcolare il messaggio in chiaro $P$.
-        \end{enumerate}
-
-        \Problem{02/03/2015}
-        Bob adotta il sistema di cifratura a chiave pubblica RSA, pubblicando il modulo $n=8791$ e 
-        l'esponente di cifratura $e=6243$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti sulla base delle ipotesi del metodo RSA.
-            \item Alice trasmette il messaggio cifrato $C=10$; calcolare il messaggio in chiaro $P$.
-        \end{enumerate}
-
-        \Problem{09/09/2016}
-        Bob adotta il sistema di cifratura a chiave pubblica RSA, pubblicando il modulo $n=4189$ e 
-        l'esponente di cifratura $e=3707$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti sulla base delle ipotesi del metodo RSA.
-            \item Alice trasmette il messaggio cifrato $C=50$; calcolare il messaggio in chiaro $P$.
-        \end{enumerate}
-
-        \Problem{09/09/2016}
-        Bob adotta il sistema di cifratura a chiave pubblica RSA, pubblicando il modulo $n=667$ e 
-        l'esponente di cifratura $e=5$; assumiamo che questi dati rispettino le ipotesi del metodo RSA.
-        \begin{enumerate}
-            \item Alice trasmette il messaggio cifrato $C=523$; calcolare il messaggio in chiaro $P$ tramite 
-                l'attacco a RSA con testo in chiaro corto, supponendo che $P$ sia il prodotto di due interi 
-                $i<10, k<10 \,:\, P=i\cdot k$. Non si deve tentare di fattorizzare $n$ e calcolare $\varphi(n)$ 
-                per decifrare $P$.
-        \end{enumerate}
-
-        \Problem{06/07/2018}
-        Bob adotta il sistema di cifratura a chiave pubblica RSA, pubblicando il modulo $n=5251$ e 
-        l'esponente di cifratura $e=1021$; assumiamo che questi dati rispettino le ipotesi del metodo RSA.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti sulla base delle ipotesi del metodo RSA.
-            \item Oscar vuole firmare messaggi impersonando Bob sulla base dei dati pubblici: cosa deve 
-                fare? Calcolare la firma di Bob $A(m)$ per il messaggio $m=112$.
-        \end{enumerate}
-
-        \Problem{11/02/2019}
-        Bob adotta il sistema di cifratura a chiave pubblica RSA, pubblicando il modulo $n=5141$ e 
-        due esponenti di cifratura $e_1=1521,\,e_2=1523$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti sulla base delle ipotesi del metodo RSA; 
-                scegliere il valore corretto tra i due esponenti $e_1$ ed $e_2$.
-            \item Oscar vuole firmare messaggi impersonando Bob sulla base dei dati pubblici: cosa deve 
-                fare? Calcolare la firma di Bob $A(m)$ per il messaggio $m=7$ (usare il valore di $e$ 
-                corretto, ottenuto nel quesito precedente).
-        \end{enumerate}
-
-        \Problem{26/02/2019}
-        Bob adotta il sistema di cifratura a chiave pubblica RSA, pubblicando il modulo $n=9797$ e 
-        due esponenti di cifratura $e_1=2087,\,e_2=2097$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti sulla base delle ipotesi del metodo RSA; 
-                scegliere il valore corretto tra i due esponenti $e_1$ ed $e_2$.
-            \item Oscar vuole firmare messaggi impersonando Bob sulla base dei dati pubblici: cosa deve 
-                fare? Calcolare la firma di Bob $A(m)$ per il messaggio $m=111$ (usare il valore di $e$ 
-                corretto, ottenuto nel quesito precedente).
-        \end{enumerate}
+\chapter{Sequenze binarie pseudo-casuali}
 
     \bigskip
-    \section{Pattuizione della chiave Diffie-Hellman}
-        \Problem{25/09/2013}
-        Alice e Bob adottano il protocollo Diffie-Hellman per lo scambio della chiave; Alice pubblica 
-        $p=107,\, \alpha=4$ (da verificare) e sceglie $x=23$ segreto, mentre Bob sceglie $y=3$ segreto.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti secondo le ipotesi del protocollo Diffie-Hellman 
-                per lo scambio della chiave; se $\alpha=4$ non risultasse una scelta valida, Alice 
-                pubblicherebbe invece $\alpha=5$ (da verificare); se anche questa scelta non fosse valida, Alice e Bob 
-                rinuncerebbero a continuare (l'esercizio termina).
-            \item Calcolare i messaggi scambiati e la chiave $K$ condivisa al termine.
-        \end{enumerate}
+    \section{Generatore di Blum, Blum e Shub}
+        \Problem{27/02/2013}
+        Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
+        per $p=7,\, q=11,\, x=5$ e determinarne il periodo.
 
-        \Problem{03/03/2014}
-        Alice e Bob adottano il protocollo Diffie-Hellman per lo scambio della chiave; Alice pubblica 
-        $p=139,\, \alpha=4$ (da verificare) e sceglie $x=57$ segreto, mentre Bob sceglie $y=12$ segreto. Oscar 
-        si intromette e sceglie $z=2$ segreto (attacco man in the middle).
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti secondo le ipotesi del protocollo Diffie-Hellman 
-                per lo scambio della chiave; se $\alpha=4$ non risultasse una scelta valida, Alice 
-                pubblicherebbe invece $\alpha \in \{3,\,5,\,6,\,7,\,8,\,9,\,10\}$ (da verificare); se anche 
-                questa scelta non fosse valida, Alice e Bob rinuncerebbero a continuare (l'esercizio termina).
-            \item Calcolare i messaggi scambiati tra Alice, Bob e Oscar e le chiavi $K_A,\,K_B$ condivise tra 
-                Oscar e Alice e tra Oscar e Bob.
-        \end{enumerate}
+        \Problem{01/09/2014}
+        Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
+        per $p=19,\, q=31,\, x=9$ e determinarne il periodo.
 
-        \Problem{21/07/2016}
-        Alice e Bob adottano il protocollo Diffie-Hellman per lo scambio della chiave; Alice pubblica 
-        $p=47,\, \alpha=4$ (da verificare) e sceglie $x\in [1,\,p-2]$ segreto, mentre Bob sceglie $y\in [1,\,p-2]$ 
-        segreto.
+        \Problem{17/07/2015}
+        Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
+        per $p=23,\, q=31,\, x=5$ e determinarne il periodo.
+
+        \Problem{04/07/2016}
         \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti secondo le ipotesi del protocollo Diffie-Hellman 
-                per lo scambio della chiave; se $\alpha=4$ non risultasse una scelta valida, Alice 
-                pubblicherebbe invece $\alpha \in \{3,\,5,\,6,\,7,\,8,\,9\}$ (da verificare); se anche 
-                questa scelta non fosse valida, Alice e Bob rinuncerebbero a continuare (l'esercizio termina).
-            \item Oscar osserva i seguenti messaggi scambiati da Alice e Bob: \[
-            \begin{array}{ll}
-                \text{Alice} \rightarrow \text{Bob} & \alpha^{x} \equiv\,22\,(\mathrm{mod}\,p)\\
-                \text{Alice} \leftarrow \text{Bob} & \alpha^{y} \equiv\,23\,(\mathrm{mod}\,p)
-            \end{array}
-            \] Sulla base di queste informazioni, calcolare gli esponenti $x$ e $y$ e la chiave $K_{AB}$.
+            \item Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
+                per $p=19,\, q=31,\, x=3$ e determinarne il periodo.
+            \item In base alla teoria, quali sono i valori possibili che può assumere il periodo $P = \pi(x_0)$ del 
+                generatore ottenuto al punto precedente, per valori arbitrari del seme $x_0 =x^2 \in\mathbb{Z}_n$?\\
+                Si ricorda che $\pi(x_0)$ divide $\lambda(\lambda(n))$, dove 
+                $\lambda(n)=\mathrm{mcm}\left(\{\varphi(p^{a_i}_i)\}\right)$ è la funzione di Carmichael.
         \end{enumerate}
 
         \Problem{09/02/2017}
-        Alice e Bob adottano il protocollo Diffie-Hellman per lo scambio della chiave; Alice pubblica 
-        $p=53,\, \alpha=4$ (da verificare) e sceglie $x\in [1,\,p-2]$ segreto, mentre Bob sceglie $y\in [1,\,p-2]$ 
-        segreto.
         \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti secondo le ipotesi del protocollo Diffie-Hellman 
-                per lo scambio della chiave; se $\alpha=4$ non risultasse una scelta valida, Alice 
-                pubblicherebbe invece $\alpha \in \{5,\,6,\,7\}$ (da verificare); se anche questa scelta 
-                non fosse valida, Alice e Bob rinuncerebbero a continuare (l'esercizio termina).
-            \item Oscar osserva i seguenti messaggi scambiati da Alice e Bob: \[
-            \begin{array}{ll}
-                \text{Alice} \rightarrow \text{Bob} & \alpha^{x} \equiv\,26\,(\mathrm{mod}\,p)\\
-                \text{Alice} \leftarrow \text{Bob} & \alpha^{y} \equiv\,42\,(\mathrm{mod}\,p)
-            \end{array}
-            \] Sulla base di queste informazioni, calcolare gli esponenti $x$ e $y$ e la chiave $K_{AB}$.
+            \item Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
+                per $p=23,\, q=43,\, x=6$ e determinarne il periodo.
+            \item In base alla teoria, quali sono i valori possibili che può assumere il periodo $P = \pi(x_0)$ del 
+                generatore ottenuto al punto precedente, per valori arbitrari del seme $x_0 =x^2 \in\mathbb{Z}_n$?\\
+                Si ricorda che $\pi(x_0)$ divide $\lambda(\lambda(n))$, dove 
+                $\lambda(n)=\mathrm{mcm}\left(\{\varphi(p^{a_i}_i)\}\right)$ è la funzione di Carmichael.
         \end{enumerate}
 
-        \Problem{27/07/2018}
-        Alice e Bob adottano il protocollo Diffie-Hellman per lo scambio della chiave; Alice pubblica 
-        $p=199,\, \alpha=3$ (da verificare) e sceglie $x\in [1,\,p-2]$ segreto, mentre Bob sceglie $y\in [1,\,p-2]$ 
-        segreto.
+        \Problem{09/02/2017}
         \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti secondo le ipotesi del protocollo Diffie-Hellman 
-                per lo scambio della chiave; se $\alpha=3$ non risultasse una scelta valida, Alice 
-                pubblicherebbe invece $\alpha \in \{4,\,5\}$ (da verificare); se anche questa scelta 
-                non fosse valida, Alice e Bob rinuncerebbero a continuare (l'esercizio termina).
-            \item Oscar osserva i seguenti messaggi scambiati da Alice e Bob: \[
-            \begin{array}{ll}
-                \text{Alice} \rightarrow \text{Bob} & \alpha^{x} \equiv\,106\,(\mathrm{mod}\,p)\\
-                \text{Alice} \leftarrow \text{Bob} & \alpha^{y} \equiv\,14\,(\mathrm{mod}\,p)
-            \end{array}
-            \] Sulla base di queste informazioni, calcolare gli esponenti $x$ e $y$ e la chiave $K_{AB}$.
-        \end{enumerate}
-
-        \Problem{02/07/2019}
-        Alice e Bob adottano il protocollo Diffie-Hellman per lo scambio della chiave; Alice pubblica 
-        $p=263,\, \alpha=13$ (da verificare) e sceglie $x\in [1,\,p-2]$ segreto, mentre Bob sceglie $y\in [1,\,p-2]$ 
-        segreto.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti secondo le ipotesi del protocollo Diffie-Hellman 
-                per lo scambio della chiave; se $\alpha=13$ non risultasse una scelta valida, Alice 
-                pubblicherebbe invece $\alpha=14$ (da verificare); se anche questa scelta 
-                non fosse valida, Alice e Bob rinuncerebbero a continuare (l'esercizio termina).
-            \item Oscar osserva i seguenti messaggi scambiati da Alice e Bob: \[
-            \begin{array}{ll}
-                \text{Alice} \rightarrow \text{Bob} & \alpha^{x} \equiv\,139\,(\mathrm{mod}\,p)\\
-                \text{Alice} \leftarrow \text{Bob} & \alpha^{y} \equiv\,71\,(\mathrm{mod}\,p)
-            \end{array}
-            \] Sulla base di queste informazioni, calcolare gli esponenti $x$ e $y$ e la chiave $K_{AB}$.
+            \item Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
+                per $p=23,\, q=47,\, x=48$ e determinarne il periodo.
+            \item In base alla teoria, quali sono i valori possibili che può assumere il periodo $P = \pi(x_0)$ del 
+                generatore ottenuto al punto precedente, per valori arbitrari del seme $x_0 =x^2 \in\mathbb{Z}_n$?\\
+                Si ricorda che $\pi(x_0)$ divide $\lambda(\lambda(n))$, dove 
+                $\lambda(n)=\mathrm{mcm}\left(\{\varphi(p^{a_i}_i)\}\right)$ è la funzione di Carmichael.
         \end{enumerate}
 
     \bigskip
-    \section{Crittosistema a chiave pubblica di El Gamal}
-        \Problem{27/02/2013}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=127,\, \alpha=3,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=98$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=3$ non fosse una scelta valida, Bob userà $\alpha=6$ (da verificare). 
-                Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire (l'esercizio 
-                termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=110$ e spedisce il messaggio $P=33$; 
-                calcolare il messaggio cifrato $C=(r,\,t)$.
-            \item Bob, per un errore di trasmissione, riceve $C^{\prime}=(r^{\prime},\,t^{\prime})=(37,\,102)$; 
-                calcolare il messaggio $P^{\prime}$ decifrato da Bob.
-        \end{enumerate}
+    \section{Scrambler additivo}
+        \Problem{11/07/2013}
+        Si disegni lo schema di uno scrambler additivo avente polinomio caratteristico $1+x^2 +x^3 =x^5$. Quale 
+        sarà il massimo periodo della sequenza PRBS generata, avendo tutti ``0'' in ingresso?
 
-        \Problem{14/02/2014}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=127,\, \alpha=5,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=64$.
+        \Problem{25/09/2013}
         \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=5$ non fosse una scelta valida, Bob userà $\alpha=6$ (da verificare). 
-                Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire (l'esercizio 
-                termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=110$ e spedisce il messaggio $P_1=12$; 
-                calcolare il messaggio cifrato $C_1=(r_1,\,t_1)$.
-            \item Alice estrae un nuovo nonce $k$, e usando questo stesso valore spedisce i messaggi 
-                $P_2,\,P_3,\,P_4$; Oscar intercetta i seguenti messaggi cifrati, e scopre uno dei messaggi 
-                in chiaro: \[
-                \begin{array}{ll}
-                    C_2=(r_2,\,t_2)=(96,\,13) & P_2=25\\
-                    C_3=(r_3,\,t_3)=(96,\,121) & P_3=?\\
-                    C_4=(r_4,\,t_4)=(96,\,62) & P_4=?
-                \end{array}
-                \] Calcolare $P_3$ e $P_4$.
-        \end{enumerate}
-
-        \Problem{03/03/2014}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=149,\, \alpha=3,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=77$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=3$ non fosse una scelta valida, Bob userà $\alpha\in\{4,\,5\}$ 
-                (da verificare). Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire 
-                (l'esercizio termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=86$ e spedisce il messaggio $P=100$; 
-                calcolare il messaggio cifrato $C=(r,\,t)$.
-            \item Bob, per un errore di trasmissione, riceve $C^{\prime}=(r^{\prime},\,t^{\prime})=(44,\,55)$; 
-                calcolare il messaggio $P^{\prime}$ decifrato da Bob.
-        \end{enumerate}
-
-        \Problem{18/07/2014}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=163,\, \alpha=3,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=128$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=3$ non fosse una scelta valida, Bob userà $\alpha\in\{4,\,5\}$ 
-                (da verificare). Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire 
-                (l'esercizio termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=18$ e spedisce il messaggio $P=120$; 
-                calcolare il messaggio cifrato $C=(r,\,t)$.
-            \item Bob, per un errore di trasmissione, riceve $C^{\prime}=(r^{\prime},\,t^{\prime})=(11,\,22)$; 
-                calcolare il messaggio $P^{\prime}$ decifrato da Bob.
-        \end{enumerate}
-
-        \Problem{01/09/2014}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=101,\, \alpha=5,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=32$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=5$ non fosse una scelta valida, Bob userà $\alpha\in\{6,\,7\}$ 
-                (da verificare). Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire 
-                (l'esercizio termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=64$ e spedisce il messaggio $P_1=50$; 
-                calcolare il messaggio cifrato $C_1=(r_1,\,t_1)$.
-            \item Alice estrae un nuovo nonce $k$, e usando questo stesso valore spedisce i messaggi 
-                $P_2,\,P_3,\,P_4$; Oscar intercetta i seguenti messaggi cifrati, e scopre uno dei messaggi 
-                in chiaro: \[
-                \begin{array}{ll}
-                    C_2=(r_2,\,t_2)=(39,\,5) & P_2=16\\
-                    C_3=(r_3,\,t_3)=(39,\,82) & P_3=?\\
-                    C_4=(r_4,\,t_4)=(39,\,76) & P_4=?
-                \end{array}
-                \] Calcolare $P_3$ e $P_4$.
-        \end{enumerate}
-
-        \Problem{13/02/2015}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=197,\, \alpha=5,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=128$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=5$ non fosse una scelta valida, Bob userà $\alpha\in\{6,\,7\}$ 
-                (da verificare). Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire 
-                (l'esercizio termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=64$ e spedisce il messaggio $P_1=20$; 
-                calcolare il messaggio cifrato $C_1=(r_1,\,t_1)$.
-            \item Alice estrae un nuovo nonce $k$, e usando questo stesso valore spedisce i messaggi 
-                $P_2,\,P_3,\,P_4$; Oscar intercetta i seguenti messaggi cifrati, e scopre uno dei messaggi 
-                in chiaro: \[
-                \begin{array}{ll}
-                    C_2=(r_2,\,t_2)=(138,\,52) & P_2=50\\
-                    C_3=(r_3,\,t_3)=(138,\,73) & P_3=?\\
-                    C_4=(r_4,\,t_4)=(138,\,168) & P_4=?
-                \end{array}
-                \] Calcolare $P_3$ e $P_4$.
+            \item Si disegni la figura di uno scrambler additivo avente polinomio caratteristico $P(x)= 1+x +x^2 +x^4$. 
+                Si indichi la sequenza binaria in ingresso con $\{I_k\}$, quella in uscita con $\{U_k\}$ e quella 
+                pseudo\nbdash casuale generata con $\{R_k\}$.
+            \item Si inizializzi lo scrambler con  ``1'' negli elementi di ritardo $D_1$ e $D_2$ e con ``0'' negli elementi 
+                $D_3$ e $D_4$; lo si alimenti con una sequenza in ingresso di soli ``1''. Ricavare la sequenza $\{U_k\}$ 
+                all'uscita, evidenziando la sua periodicità: qual è il periodo di tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile.
         \end{enumerate}
 
         \Problem{23/09/2016}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=127,\, \alpha=7,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=71$.
         \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=7$ non fosse una scelta valida, Bob userà $\alpha\in\{8,\,9\}$ 
-                (da verificare). Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire 
-                (l'esercizio termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=26$ e spedisce il messaggio $P=100$; 
-                calcolare il messaggio cifrato $C=(r,\,t)$.
-            \item Bob, per un errore di trasmissione, riceve $C^{\prime}=(r^{\prime},\,t^{\prime})=(72,\,55)$; 
-                calcolare il messaggio $P^{\prime}$ decifrato da Bob.
+            \item Si disegni la figura di uno scrambler additivo avente polinomio caratteristico $P(x)= 1+x +x^3 +x^4$. 
+                Si indichi la sequenza binaria in ingresso con $\{I_k\}$, quella in uscita con $\{U_k\}$ e quella 
+                pseudo\nbdash casuale generata con $\{R_k\}$.
+            \item Si inizializzi lo scrambler con  ``1'' negli elementi di ritardo $D_1$ e con ``0'' negli elementi 
+                $D_2$, $D_3$ e $D_4$; lo si alimenti con una sequenza in ingresso di soli ``1''. Ricavare la 
+                sequenza $\{U_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile.
         \end{enumerate}
 
-        \Problem{09/02/2017}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=223,\, \alpha=7,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=129$.
+    \bigskip
+    \section{Scrambler autosincronizzante}
+        \Problem{18/07/2014}
         \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=7$ non fosse una scelta valida, Bob userà $\alpha\in\{6,\,5\}$ 
-                (da verificare). Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire 
-                (l'esercizio termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=67$ e spedisce il messaggio $P_1=200$; 
-                calcolare il messaggio cifrato $C_1=(r_1,\,t_1)$.
-            \item Alice estrae un nuovo nonce $k$, e usando questo stesso valore spedisce i messaggi 
-                $P_2,\,P_3,\,P_4$; Oscar intercetta i seguenti messaggi cifrati, e scopre uno dei messaggi 
-                in chiaro: \[
-                \begin{array}{ll}
-                    C_2=(r_2,\,t_2)=(129,\,108) & P_2=50\\
-                    C_3=(r_3,\,t_3)=(129,\,128) & P_3=?\\
-                    C_4=(r_4,\,t_4)=(129,\,100) & P_4=?
-                \end{array}
-                \] Calcolare $P_3$ e $P_4$.
+            \item Si disegni la figura di uno scrambler autosincronizzante avente polinomio caratteristico 
+                $P(x)= 1 +x^2 +x^4$. Si indichi la sequenza binaria in ingresso con $\{I_k\}$ e quella in 
+                uscita con $\{U_k\}$.
+            \item Si inizializzi lo scrambler con  ``1'' negli elementi di ritardo $D_1$ e con ``0'' negli elementi 
+                $D_2$, $D_3$ e $D_4$; lo si alimenti con una sequenza in ingresso di soli ``1''. Ricavare la 
+                sequenza $\{U_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile.
         \end{enumerate}
 
-        \Problem{27/07/2018}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=89,\, \alpha=7,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=71$.
+        \Problem{03/07/2015}
         \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=7$ non fosse una scelta valida, Bob userà $\alpha\in\{8,\,9\}$ 
-                (da verificare). Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire 
-                (l'esercizio termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=26$ e spedisce il messaggio $P=50$; 
-                calcolare il messaggio cifrato $C=(r,\,t)$.
-            \item Bob, per un errore di trasmissione, riceve $C^{\prime}=(r^{\prime},\,t^{\prime})=(21,\,22)$; 
-                calcolare il messaggio $P^{\prime}$ decifrato da Bob.
+            \item Si disegni la figura di uno scrambler autosincronizzante avente polinomio caratteristico 
+                $P(x)= 1 +x^4$. Si indichi la sequenza binaria in ingresso con $\{I_k\}$ e quella in 
+                uscita con $\{U_k\}$.
+            \item Si inizializzi lo scrambler con  ``1'' negli elementi di ritardo $D_i$; lo si alimenti con una 
+                sequenza in ingresso di soli ``1''. Ricavare la sequenza $\{U_k\}$ all'uscita, evidenziando la sua 
+                periodicità: qual è il periodo di tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile.
         \end{enumerate}
 
         \Problem{30/08/2018}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=107,\, \alpha=3,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=40$.
         \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=3$ non fosse una scelta valida, Bob userà $\alpha\in\{4,\,5\}$ 
-                (da verificare). Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire 
-                (l'esercizio termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=26$ e spedisce il messaggio $P_1=100$; 
-                calcolare il messaggio cifrato $C_1=(r_1,\,t_1)$.
-            \item Alice estrae un nuovo nonce $k$, e usando questo stesso valore spedisce i messaggi 
-                $P_2,\,P_3,\,P_4$; Oscar intercetta i seguenti messaggi cifrati, e scopre uno dei messaggi 
-                in chiaro: \[
-                \begin{array}{ll}
-                    C_2=(r_2,\,t_2)=(18,\,19) & P_2=99\\
-                    C_3=(r_3,\,t_3)=(18,\,14) & P_3=?\\
-                    C_4=(r_4,\,t_4)=(18,\,28) & P_4=?
-                \end{array}
-                \] Calcolare $P_3$ e $P_4$.
+            \item Si disegni la figura di uno scrambler autosincronizzante avente polinomio caratteristico 
+                $P(x)= 1 +x +x^3 +x^4$, alimentato da una sequenza di soli ``0'' in ingresso e usato come generatore PRBS. 
+                Si indichi la sequenza binaria in ingresso con $\{I_k\}=\{0\}$ e quella in uscita con $\{R_k\}$.
+            \item Si inizializzi lo scrambler con $D_i(i=1,\,2,\,3,\,4)$ con $\{1,\,0,\,0,\,0\}$ al passo $k=0$. 
+                Ricavare la sequenza $\{R_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di 
+                tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile. Se lo fosse, quali sarebbero i valori 
+                possibili per il periodo?
         \end{enumerate}
 
         \Problem{11/02/2019}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=107,\, \alpha=6,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=50$.
         \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=6$ non fosse una scelta valida, Bob userà $\alpha\in\{9,\,10\}$ 
-                (da verificare). Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire 
-                (l'esercizio termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=25$ e spedisce il messaggio $P_1=100$; 
-                calcolare il messaggio cifrato $C_1=(r_1,\,t_1)$.
-            \item Alice estrae un nuovo nonce $k$, e usando questo stesso valore spedisce i messaggi 
-                $P_2,\,P_3,\,P_4$; Oscar intercetta i seguenti messaggi cifrati, e scopre uno dei messaggi 
-                in chiaro: \[
-                \begin{array}{ll}
-                    C_2=(r_2,\,t_2)=(27,\,97) & P_2=50\\
-                    C_3=(r_3,\,t_3)=(27,\,95) & P_3=?\\
-                    C_4=(r_4,\,t_4)=(27,\,91) & P_4=?
-                \end{array}
-                \] Calcolare $P_3$ e $P_4$.
+            \item Si disegni la figura di uno scrambler autosincronizzante avente polinomio caratteristico 
+                $P(x)= 1 +x +x^2 +x^4$, alimentato da una sequenza di soli ``0'' in ingresso e usato come generatore PRBS. 
+                Si indichi la sequenza binaria in ingresso con $\{I_k\}=\{0\}$ e quella in uscita con $\{R_k\}$.
+            \item Si inizializzi lo scrambler con $D_i(i=1,\,2,\,3,\,4)$ con $\{1,\,1,\,0,\,0\}$ al passo $k=0$. 
+                Ricavare la sequenza $\{R_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di 
+                tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile. Se lo fosse, quali sarebbero i valori 
+                possibili per il periodo?
         \end{enumerate}
 
         \Problem{02/07/2019}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=193,\, \alpha=4,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=59$.
         \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=4$ non fosse una scelta valida, Bob userà $\alpha\in\{5,\,6\}$ 
-                (da verificare). Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire 
-                (l'esercizio termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=67$ e spedisce il messaggio $P_1=200$; 
-                calcolare il messaggio cifrato $C_1=(r_1,\,t_1)$.
-            \item Alice estrae un nuovo nonce $k$, e usando questo stesso valore spedisce i messaggi 
-                $P_2,\,P_3,\,P_4$; Oscar intercetta i seguenti messaggi cifrati, e scopre uno dei messaggi 
-                in chiaro: \[
-                \begin{array}{ll}
-                    C_2=(r_2,\,t_2)=(147,\,183) & P_2=11\\
-                    C_3=(r_3,\,t_3)=(147,\,163) & P_3=?\\
-                    C_4=(r_4,\,t_4)=(147,\,123) & P_4=?
-                \end{array}
-                \] Calcolare $P_3$ e $P_4$.
-        \end{enumerate}
-
-        \Problem{26/07/2019}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=127,\, \alpha=5,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=64$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=5$ non fosse una scelta valida, Bob userà $\alpha\in\{6,\,8\}$ 
-                (da verificare). Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire 
-                (l'esercizio termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=11$ e spedisce il messaggio $P=10$; 
-                calcolare il messaggio cifrato $C=(r,\,t)$.
-            \item Bob riceve $C^{\prime}=(r^{\prime},\,t^{\prime})=(89,\,117)$. Calcolare il messaggio $P^{\prime}$ 
-                decifrato da Bob; per quale valore di $k$ Alice ha calcolato $C^{\prime}=E(P^{\prime})$?
-        \end{enumerate}
-
-        \Problem{31/08/2019}
-        Bob adotta il sistema di cifratura a chiave pubblica di El Gamal e pubblica i seguenti dati: \[
-            p=223,\, \alpha=3,\, \beta= \alpha^{a} \,\mathrm{mod}\, p
-        ;\] inoltre mantiene segreto l'esponente $a=70$.
-        \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di 
-                El Gamal; se $\alpha=3$ non fosse una scelta valida, Bob userà $\alpha\in\{4,\,7\}$ 
-                (da verificare). Se nemmeno questa scelta risultasse valida, Bob rinuncia a proseguire 
-                (l'esercizio termina); calcolare $\beta$.
-            \item Alice estrae il numero casuale segreto (nonce) $k=15$ e spedisce il messaggio $P_1=230$; 
-                calcolare il messaggio cifrato $C_1=(r_1,\,t_1)$.
-            \item Alice estrae un nuovo nonce $k$, e usando questo stesso valore spedisce i messaggi 
-                $P_2,\,P_3,\,P_4$; Oscar intercetta i seguenti messaggi cifrati, e scopre uno dei messaggi 
-                in chiaro: \[
-                \begin{array}{ll}
-                    C_2=(r_2,\,t_2)=(27,\,83) & P_2=20\\
-                    C_3=(r_3,\,t_3)=(27,\,91) & P_3=?\\
-                    C_4=(r_4,\,t_4)=(27,\,200) & P_4=?
-                \end{array}
-                \] Calcolare $P_3$ e $P_4$.
+            \item Si disegni lo schema di un generatore PRBS basato su registro a scorrimento LFSR, realizzato con uno 
+                scrambler autosincronizzante avente polinomio caratteristico $P(x)= 1 +x^2 +x^4$, alimentato da una 
+                sequenza di soli ``0'' in ingresso. Si indichi la sequenza binaria in ingresso con $\{I_k\}=\{0\}$ e 
+                quella in uscita con $\{R_k\}$.
+            \item Si inizializzi lo scrambler con $D_i(i=1,\,2,\,3,\,4)$ con $\{0,\,1,\,0,\,0\}$ al passo $k=0$. 
+                Ricavare la sequenza $\{R_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di 
+                tale sequenza?
+            \item Verificare che il polinomio $P(x)$ sia irriducibile. Se lo fosse, quali sarebbero i valori 
+                possibili per il periodo?
         \end{enumerate}

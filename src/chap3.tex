@@ -1,92 +1,393 @@
 %! TEX root = main.tex
-% Capitolo 3
 
-\chapter{Certificati e comunicazione sicura}
+\chapter{Firma digitale}
 
     \bigskip
-    \section{Certificati X.509}
-        \Problem{08/02/2013}
-        Una autorità fidata TA rilascia ad Alice il certificato $C_A =$, 
-        nel per il quale:
-        \begin{itemize}
-            \item la cifratura e la firma usano il sistema RSA con $n=221$;
-            \item la chiave pubblica di TA è $K_{TA}=35$;
-            \item la chiave pubblica di Alice è $K_A=25$;
-            \item l'identificativo di Alice vale $A=200$;
-            \item la funzione di hash $\mathbb{H}(x,\,y)$ sia definita per $h,\,x,\,y \in \mathbb{Z}_{n}$ come: \[
-                    \mathbb{H}(x,\,y) = (x \oplus \text{SL}_3 (y) \oplus \text{SL}_4 (y)) \,\mathrm{mod}\,n
-                .\] La funzione $\text{SL}_{k} (h)$ scorre ciclicamente a sinistra di $k$ posizioni il valore 
-                binario $h$; infine siano $x,\,y,\,\mathbb{H}(x,\,y)$ parole di 8 bit.
-        \end{itemize}
+    \section{Firma RSA}
+        \Problem{27/02/2013}
+        Bob adotta il sistema di firma elettronica RSA; egli pubblica il modulo $n=437$ e l'esponente di 
+        cifratura $e=17$.
         \begin{enumerate}
-            \item Verificare la correttezza dei dati forniti secondo le ipotesi del sistema RSA.
-            \item Calcolare il certificato $C_{A}$ rilasciato da TA.
-            \item Verificare l'autenticità del certificato $C_{A}$.
+            \item Verificare la correttezza dei dati forniti in base alle ipotesi di del metodo RSA,
+            \item Calcolare la firma $A$ del messaggio $P=77$.
+            \item Il valore $A\equiv\,2\,(\mathrm{mod}\,n)$ è una firma valida per quale messaggio $P$?
         \end{enumerate}
 
     \bigskip
-    \section{Schema di Blom per pre-distribuzione}
-        \Problem{11/07/2013}
-        L'autorità fidata TA adotta lo schema di Blom per distribuire chiavi simmetriche a tre utenti $A,\,B$ e $C$, 
-        e pubblica $p=227$; Gli identificativi pubblici dei tre utenti sono rispettivamente  $r_A=100,\, r_B=101,\, r_C=102$.
+    \section{Firma Cieca}
+        \Problem{25/09/2013}
+        Alice e Bob adottano il sistema di firma cieca RSA; Alice pubblica il modulo $n=391$ e l'esponente 
+        di cifrature $e=13$. Bob estrae il numero casuale segreto (nonce) $k=12$ e chiede ad Alice di firmare 
+        alla cieca il messaggio $P=32$.
         \begin{enumerate}
-            \item Per i tre utenti TA sceglie e tiene segreti $a=10,\,b=15,\,c=50$; calcolare le tre chiavi simmetriche 
-                $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
-            \item Per i tre utenti, TA sceglie nuovi parametri segreti $a,\,b,\,c$; gli utenti $A$ e $B$ si accordano 
-                e si scambiano le informazioni $a_A=22,\, a_B=88,\, b_A=205,\, b_B=77$; calcolare i parametri segreti 
-                $a,\,b,\,c$, e poi le tre chiavi simmetriche $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
+            \item Verificare la correttezza dei dati forniti secondo le ipotesi del metodo di firma cieca RSA.
+            \item Calcolare i messaggi scambiati da Alice e Bob, e la firma $A$ del messaggio $P$.
+        \end{enumerate}
+
+        \Problem{18/07/2014}
+        Alice e Bob adottano il sistema di firma cieca RSA; Alice pubblica il modulo $n=319$ e l'esponente 
+        di cifrature $e=17$. Bob estrae il numero casuale segreto (nonce) $k=25$ e chiede ad Alice di firmare 
+        alla cieca il messaggio $P=299$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti secondo le ipotesi del metodo di firma cieca RSA.
+            \item Calcolare i messaggi scambiati da Alice e Bob, e la firma $A$ del messaggio $P$.
+        \end{enumerate}
+
+        \Problem{03/07/2015}
+        Alice e Bob adottano il sistema di firma cieca RSA; Alice pubblica il modulo $n=551$ e l'esponente 
+        di cifrature $e=17$. Bob estrae il numero casuale segreto (nonce) $k=12$ e chiede ad Alice di firmare 
+        alla cieca il messaggio $P=500$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti secondo le ipotesi del metodo di firma cieca RSA.
+            \item Calcolare i messaggi scambiati da Alice e Bob, e la firma $A$ del messaggio $P$.
+        \end{enumerate}
+
+        \Problem{21/07/2016}
+        Alice e Bob adottano il sistema di firma cieca RSA; Alice pubblica il modulo $n=899$ e l'esponente 
+        di cifrature $e=17$. Bob estrae il numero casuale segreto (nonce) $k=501$ e chiede ad Alice di firmare 
+        alla cieca il messaggio $P=500$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti secondo le ipotesi del metodo di firma cieca RSA.
+            \item Calcolare i messaggi scambiati da Alice e Bob, e la firma $A$ del messaggio $P$.
+        \end{enumerate}
+
+        \Problem{09/02/2017}
+        Alice e Bob adottano il sistema di firma cieca RSA; Alice pubblica il modulo $n=1073$ e l'esponente 
+        di cifrature $e=25$. Bob estrae il numero casuale segreto (nonce) $k=17$ e chiede ad Alice di firmare 
+        alla cieca il messaggio $P=50$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti secondo le ipotesi del metodo di firma cieca RSA.
+            \item Calcolare i messaggi scambiati da Alice e Bob, e la firma $A$ del messaggio $P$.
+        \end{enumerate}
+
+        \Problem{30/08/2018}
+        Alice e Bob adottano il sistema di firma cieca RSA; Alice pubblica il modulo $n=667$ e l'esponente 
+        di cifrature $e=39$. Bob estrae il numero casuale segreto (nonce) $k=20$ e chiede ad Alice di firmare 
+        alla cieca il messaggio $P=500$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti secondo le ipotesi del metodo di firma cieca RSA.
+            \item Calcolare i messaggi scambiati da Alice e Bob, e la firma $A$ del messaggio $P$.
+        \end{enumerate}
+
+    \bigskip
+    \section{Firma di El Gamal}
+        \Problem{08/02/2013}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=113,\, \alpha = 7,\, \beta = \alpha^a\,\mathrm{mod}\,p
+        ;\] inoltre Bob mantiene segreto l'esponente $a=29$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di El Gamal. 
+                Se $\alpha=7$ non risultasse una scelta valida, Bob userà invece $\alpha=6$ (da verificare); 
+                se nemmeno questa scelta risultasse valida, Bob rinuncerà a proseguire (l'esercizio termina); 
+                calcolare $\beta$.
+            \item Bob estrae il numero casuale segreto (nonce) $k=51$; per questo valore di $k$, calcolare 
+                la firma $A$ del messaggio $P=101$.
+            \item Verificare se anche la firma $A^{\prime}=(r^{\prime}, s^{\prime})=(103,46)$ è valida per 
+                lo stesso messaggio $P=101$.
+        \end{enumerate}
+
+        \Problem{11/07/2013}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=113,\, \alpha = 6,\, \beta = \alpha^a\,\mathrm{mod}\,p = 37
+        ;\] inoltre Bob mantiene segreto l'esponente $a\in (1,\,p-2]$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di El Gamal. 
+                Se $\alpha=6$ non risultasse una scelta valida, Bob userà invece $\alpha=7$ (da verificare); 
+                se nemmeno questa scelta risultasse valida, Bob rinuncerà a proseguire (l'esercizio termina).
+            \item Bob estrae il numero casuale segreto (nonce) $k\perp p-1$; usando due volte lo stesso $k$, 
+                Bob calcola le firme $A_1=(r_1,\,s_1)=(55,\,62)$ e $A_2=(r_2,\,s_2)=(55,\,39)$, rispetto ai 
+                messaggi $P_1=7$ e $P_2=48$. Oscar intercetta $A_1$ e $A_2$; calcolare $k$ e $a$ sfruttando 
+                l'attacco del nonce ripetuto.
         \end{enumerate}
 
         \Problem{13/09/2013}
-        L'autorità fidata TA adotta lo schema di Blom per distribuire chiavi simmetriche a tre utenti $A,\,B$ e $C$, 
-        e pubblica $p=997$; Gli identificativi pubblici dei tre utenti sono rispettivamente  $r_A=111,\, r_B=222,\, r_C=333$.
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=113,\, \alpha = 6,\, \beta = \alpha^a\,\mathrm{mod}\,p=31
+        ;\] inoltre Bob mantiene segreto l'esponente $a\in (1,\,p-2]$.
         \begin{enumerate}
-            \item Per i tre utenti TA sceglie e tiene segreti $a=501,\,b=955,\,c=370$; calcolare le tre chiavi simmetriche 
-                $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
-            \item Per i tre utenti, TA sceglie nuovi parametri segreti $a,\,b,\,c$; gli utenti $A$ e $B$ si accordano 
-                e si scambiano le informazioni $a_A=271,\, a_B=117,\, b_A=419,\, b_B=565$; calcolare i parametri segreti 
-                $a,\,b,\,c$, e poi le tre chiavi simmetriche $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
+            \item Bob estrae il numero casuale segreto (nonce) $k\perp p-1$; usando lo stesso $k$, 
+                Bob calcola le seguenti firme $A_k$ per i messaggi $P_k$:
+                \[\begin{array}{ll}
+                    A_1=(r_1,\,s_1)=(92,\,4) & P_1=12\\
+                    A_2=(r_2,\,s_2)=(92,\,44) & P_2=100\\
+                    A_3=(r_3,\,s_3)=(92,\,12) & P_3=35
+                \end{array}\]
+                Verificare la validità delle tre firme.
+            \item Oscar intercetta i tre messaggi $(P_k,\,A_k)$; sulla base delle sole firme verificate valide 
+                (nel precedente quesito), calcolare $k$ e $a$ sfruttando l'attacco del nonce ripetuto.
         \end{enumerate}
 
-        \Problem{01/09/2014}
-        L'autorità fidata TA adotta lo schema di Blom per distribuire chiavi simmetriche a tre utenti $A,\,B$ e $C$, 
-        e pubblica $p=569$; Gli identificativi pubblici dei tre utenti sono rispettivamente  $r_A=25,\, r_B=26,\, r_C=27$.
+        \Problem{03/03/2014}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=109,\, \alpha = 6,\, \beta = \alpha^a\,\mathrm{mod}\,p=48
+        ;\] inoltre Bob mantiene segreto l'esponente $a\in (1,\,p-2]$.
         \begin{enumerate}
-            \item Per i tre utenti TA sceglie e tiene segreti $a=501,\,b=369,\,c=111$; calcolare le tre chiavi simmetriche 
-                $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
-            \item Per i tre utenti, TA sceglie nuovi parametri segreti $a,\,b,\,c$; gli utenti $A$ e $B$ si accordano 
-                e si scambiano le informazioni $a_A=510,\, a_B=530,\, b_A=201,\, b_B=231$; calcolare i parametri segreti 
-                $a,\,b,\,c$, e poi le tre chiavi simmetriche $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
+            \item Bob estrae il numero casuale segreto (nonce) $k\perp p-1$; usando lo stesso $k$, 
+                Bob calcola le seguenti firme $A_k$ per i messaggi $P_k$:
+                \[\begin{array}{ll}
+                    A_1=(r_1,\,s_1)=(42,\,74) & P_1=106\\
+                    A_2=(r_2,\,s_2)=(42,\,99) & P_2=10\\
+                    A_3=(r_3,\,s_3)=(42,\,28) & P_3=56
+                \end{array}\]
+                Verificare la validità delle tre firme.
+            \item Oscar intercetta i tre messaggi $(P_k,\,A_k)$; sulla base delle sole firme verificate valide 
+                (nel precedente quesito), calcolare $k$ e $a$ sfruttando l'attacco del nonce ripetuto.
+        \end{enumerate}
+
+        \Problem{04/07/2014}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=181,\, \alpha = 7,\, \beta = \alpha^a\,\mathrm{mod}\,p
+        ;\] inoltre Bob mantiene segreto l'esponente $a=56$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di El Gamal. 
+                Se $\alpha=7$ non risultasse una scelta valida, Bob userà invece $\alpha=10$ (da verificare); 
+                se nemmeno questa scelta risultasse valida, Bob rinuncerà a proseguire (l'esercizio termina); 
+                calcolare $\beta$.
+            \item Bob estrae il numero casuale segreto (nonce) $k=23$; per questo valore di $k$, calcolare 
+                la firma $A$ del messaggio $P=11$.
+            \item Verificare se anche la firma $A^{\prime}=(r^{\prime}, s^{\prime})=(112,57)$ è valida per 
+                lo stesso messaggio $P=11$.
+        \end{enumerate}
+
+        \Problem{17/09/2014}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=149,\, \alpha = 8,\, \beta = \alpha^a\,\mathrm{mod}\,p=127
+        ;\] inoltre Bob mantiene segreto l'esponente $a\in (1,\,p-2]$.
+        \begin{enumerate}
+            \item Bob estrae il numero casuale segreto (nonce) $k\perp p-1$; usando lo stesso $k$, 
+                Bob calcola le seguenti firme $A_k$ per i messaggi $P_k$:
+                \[\begin{array}{ll}
+                    A_1=(r_1,\,s_1)=(75,\,2) & P_1=10\\
+                    A_2=(r_2,\,s_2)=(75,\,124) & P_2=20\\
+                    A_3=(r_3,\,s_3)=(75,\,94) & P_3=30
+                \end{array}\]
+                Verificare la validità delle tre firme.
+            \item Oscar intercetta i tre messaggi $(P_k,\,A_k)$; sulla base delle sole firme verificate valide 
+                (nel precedente quesito), calcolare $k$ e $a$ sfruttando l'attacco del nonce ripetuto.
+        \end{enumerate}
+
+        \Problem{13/02/2015}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=107,\, \alpha = 5,\, \beta = \alpha^a\,\mathrm{mod}\,p=66
+        ;\] inoltre Bob mantiene segreto l'esponente $a\in (1,\,p-2]$.
+        \begin{enumerate}
+            \item Bob estrae il numero casuale segreto (nonce) $k\perp p-1$; usando lo stesso $k$, 
+                Bob calcola le seguenti firme $A_k$ per i messaggi $P_k$:
+                \[\begin{array}{ll}
+                    A_1=(r_1,\,s_1)=(84,\,74) & P_1=14\\
+                    A_2=(r_2,\,s_2)=(84,\,23) & P_2=15\\
+                    A_3=(r_3,\,s_3)=(84,\,40) & P_3=16
+                \end{array}\]
+                Verificare la validità delle tre firme.
+            \item Oscar intercetta i tre messaggi $(P_k,\,A_k)$; sulla base delle sole firme verificate valide 
+                (nel precedente quesito), calcolare $k$ e $a$ sfruttando l'attacco del nonce ripetuto.
+        \end{enumerate}
+
+        \Problem{02/03/2015}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=199,\, \alpha = 7,\, \beta = \alpha^a\,\mathrm{mod}\,p
+        ;\] inoltre Bob mantiene segreto l'esponente $a=56$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di El Gamal. 
+                Se $\alpha=7$ non risultasse una scelta valida, Bob userà invece $\alpha=6$ (da verificare); 
+                se nemmeno questa scelta risultasse valida, Bob rinuncerà a proseguire (l'esercizio termina); 
+                calcolare $\beta$.
+            \item Bob estrae il numero casuale segreto (nonce) $k=151$; per questo valore di $k$, calcolare 
+                la firma $A$ del messaggio $P=200$.
+            \item Verificare se anche la firma $A^{\prime}=(r^{\prime}, s^{\prime})=(44,100)$ è valida per 
+                lo stesso messaggio $P=200$.
+        \end{enumerate}
+
+        \Problem{17/07/2015}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=107,\, \alpha = 7,\, \beta = \alpha^a\,\mathrm{mod}\,p=72
+        ;\] inoltre Bob mantiene segreto l'esponente $a\in (1,\,p-2]$.
+        \begin{enumerate}
+            \item Bob estrae il numero casuale segreto (nonce) $k\perp p-1$; usando lo stesso $k$, 
+                Bob calcola le seguenti firme $A_k$ per i messaggi $P_k$:
+                \[\begin{array}{ll}
+                    A_1=(r_1,\,s_1)=(67,\,58) & P_1=61\\
+                    A_2=(r_2,\,s_2)=(67,\,31) & P_2=62\\
+                    A_3=(r_3,\,s_3)=(67,\,100) & P_3=63
+                \end{array}\]
+                Verificare la validità delle tre firme.
+            \item Oscar intercetta i tre messaggi $(P_k,\,A_k)$; sulla base delle sole firme verificate valide 
+                (nel precedente quesito), calcolare $k$ e $a$ sfruttando l'attacco del nonce ripetuto.
+        \end{enumerate}
+
+        \Problem{04/07/2016}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=103,\, \alpha = 5,\, \beta = \alpha^a\,\mathrm{mod}\,p=84
+        ;\] inoltre Bob mantiene segreto l'esponente $a\in (1,\,p-2]$.
+        \begin{enumerate}
+            \item Bob estrae il numero casuale segreto (nonce) $k\perp p-1$; usando lo stesso $k$, 
+                Bob calcola le seguenti firme $A_k$ per i messaggi $P_k$:
+                \[\begin{array}{ll}
+                    A_1=(r_1,\,s_1)=(45,\,59) & P_1=50\\
+                    A_2=(r_2,\,s_2)=(45,\,91) & P_2=51\\
+                    A_3=(r_3,\,s_3)=(45,\,19) & P_3=52
+                \end{array}\]
+                Verificare la validità delle tre firme.
+            \item Oscar intercetta i tre messaggi $(P_k,\,A_k)$; sulla base delle sole firme verificate valide 
+                (nel precedente quesito), calcolare $k$ e $a$ sfruttando l'attacco del nonce ripetuto.
+        \end{enumerate}
+
+        \Problem{21/07/2016}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=109,\, \alpha = 10,\, \beta = \alpha^a\,\mathrm{mod}\,p=59
+        ;\] inoltre Bob mantiene segreto l'esponente $a\in (1,\,p-2]$.
+        \begin{enumerate}
+            \item Bob estrae il numero casuale segreto (nonce) $k\perp p-1$; usando lo stesso $k$, 
+                Bob calcola le seguenti firme $A_k$ per i messaggi $P_k$:
+                \[\begin{array}{ll}
+                    A_1=(r_1,\,s_1)=(79,\,10) & P_1=32\\
+                    A_2=(r_2,\,s_2)=(79,\,20) & P_2=33\\
+                    A_3=(r_3,\,s_3)=(79,\,102) & P_3=35
+                \end{array}\]
+                Verificare la validità delle tre firme.
+            \item Oscar intercetta i tre messaggi $(P_k,\,A_k)$; sulla base delle sole firme verificate valide 
+                (nel precedente quesito), calcolare $k$ e $a$ sfruttando l'attacco del nonce ripetuto.
+        \end{enumerate}
+
+        \Problem{09/09/2016}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=211,\, \alpha = 6,\, \beta = \alpha^a\,\mathrm{mod}\,p
+        ;\] inoltre Bob mantiene segreto l'esponente $a=99$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di El Gamal. 
+                Se $\alpha=6$ non risultasse una scelta valida, Bob userà invece $\alpha=7$ (da verificare); 
+                se nemmeno questa scelta risultasse valida, Bob rinuncerà a proseguire (l'esercizio termina); 
+                calcolare $\beta$.
+            \item Bob estrae il numero casuale segreto (nonce) $k=191$; per questo valore di $k$, calcolare 
+                la firma $A$ del messaggio $P=200$.
+            \item Verificare se anche la firma $A^{\prime}=(r^{\prime}, s^{\prime})=(167,157)$ è valida per 
+                lo stesso messaggio $P=200$; se è valida, calcolare il valore di $k$ per cui è stata ricavata da Bob.
+        \end{enumerate}
+
+        \Problem{06/07/2018}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=127,\, \alpha = 2,\, \beta = \alpha^a\,\mathrm{mod}\,p
+        ;\] inoltre Bob mantiene segreto l'esponente $a=65$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di El Gamal. 
+                Se $\alpha=2$ non risultasse una scelta valida, Bob userà invece $\alpha=\in\{3,\,4,\,5\}$ 
+                (da verificare); se nemmeno queste scelte risultassero valide, Bob rinuncerà a proseguire 
+                (l'esercizio termina); calcolare $\beta$.
+            \item Bob estrae il numero casuale segreto (nonce) $k=19$; per questo valore di $k$, calcolare 
+                la firma $A$ del messaggio $P=19$.
+            \item Verificare se anche la firma $A^{\prime}=(r^{\prime}, s^{\prime})=(6,7)$ è valida per 
+                lo stesso messaggio $P=19$; se è valida, calcolare il valore di $k$ per cui è stata ricavata da Bob.
+        \end{enumerate}
+
+        \Problem{27/07/2018}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=157,\, \alpha = 5,\, \beta = \alpha^a\,\mathrm{mod}\,p=109
+        ;\] inoltre Bob mantiene segreto l'esponente $a\in (1,\,p-2]$.
+        \begin{enumerate}
+            \item Bob estrae il numero casuale segreto (nonce) $k\perp p-1$; usando lo stesso $k$, 
+                Bob calcola le seguenti firme $A_k$ per i messaggi $P_k$:
+                \[\begin{array}{ll}
+                    A_1=(r_1,\,s_1)=(26,\,34) & P_1=10\\
+                    A_2=(r_2,\,s_2)=(26,\,2) & P_2=11\\
+                    A_3=(r_3,\,s_3)=(26,\,20) & P_3=12
+                \end{array}\]
+                Verificare la validità delle tre firme.
+            \item Oscar intercetta i tre messaggi $(P_k,\,A_k)$; sulla base delle sole firme verificate valide 
+                (nel precedente quesito), calcolare $k$ e $a$ sfruttando l'attacco del nonce ripetuto.
         \end{enumerate}
 
         \Problem{23/01/2019}
-        L'autorità fidata TA adotta lo schema di Blom per distribuire chiavi simmetriche di sessione 
-        $K_{i,\,j}\equiv K_{j,\,i}$ a 100 utenti $U_{k}\,:\,k\in [1,\,\ldots,\,N]$ per la comunicazione tra essi; 
-        TA sceglie i valori segreti $a,\,b,\,c$ e pubblica $p$. Un provider fornisce canali sicuri da TA verso 
-        ciascun utente, ma a pagamento.
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=113,\, \alpha = 6,\, \beta = \alpha^a\,\mathrm{mod}\,p=16
+        ;\] inoltre Bob mantiene segreto l'esponente $a\in (1,\,p-2]$.
         \begin{enumerate}
-            \item Quanti numeri devono essere inviati in tutto da TA, secondo lo schema di Blom?
-            \item Se TA generasse centralmente tutte le possibili chiavi di sessione e le inviasse ai rispettivi 
-                utenti, quanti numeri dovrebbe inviare in tutto?
-            \item Si consideri il caso di tre soli utenti $A,\,b$ e $C$ con identificativi rispettivamente 
-                $r_A=10,\, r_B=20,\, r_C=30$; TA sceglie e tiene segreti $a,\,b,\,c$ e pubblica $p=1009$, tuttavia gli utenti 
-                $A$ e $B$ si mettono d'accordo e si scambiano le informazioni $a_A=591,\,a_B=73,\,b_A=132,\,b_B=114$. 
-                Calcolare i parametri segreti $a,\,b,\,c$, e poi le tre chiavi simmetriche $K_{AB},\, K_{AC},\, K_{BC}$ 
-                distribuite da TA.
+            \item Bob estrae il numero casuale segreto (nonce) $k\perp p-1$; usando lo stesso $k$, 
+                Bob calcola le seguenti firme $A_k$ per i messaggi $P_k$:
+                \[\begin{array}{ll}
+                    A_1=(r_1,\,s_1)=(94,\,13) & P_1=11\\
+                    A_2=(r_2,\,s_2)=(94,\,10) & P_2=13\\
+                    A_3=(r_3,\,s_3)=(94,\,9) & P_3=15
+                \end{array}\]
+                Verificare la validità delle tre firme.
+            \item Oscar intercetta i tre messaggi $(P_k,\,A_k)$; sulla base delle sole firme verificate valide 
+                (nel precedente quesito), calcolare $k$ e $a$ sfruttando l'attacco del nonce ripetuto.
+        \end{enumerate}
+
+        \Problem{23/01/2019}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=137,\, \alpha = 2,\, \beta = \alpha^a\,\mathrm{mod}\,p
+        ;\] inoltre Bob mantiene segreto l'esponente $a=2$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di El Gamal. 
+                Se $\alpha=2$ non risultasse una scelta valida, Bob userà invece $\alpha\in \{3,\,4\}$ 
+                (da verificare); se nemmeno questa scelta risultasse valida, Bob rinuncerà a proseguire 
+                (l'esercizio termina); calcolare $\beta$.
+            \item Bob estrae il numero casuale segreto (nonce) $k=21$; per questo valore di $k$, calcolare 
+                la firma $A$ del messaggio $P=100$.
+            \item Verificare se anche la firma $A^{\prime}=(r^{\prime}, s^{\prime})=(48,4)$ è valida per 
+                lo stesso messaggio $P=100$; se è valida, calcolare il valore di $k$ per cui è stata ricavata da Bob.
+        \end{enumerate}
+
+        \Problem{11/02/2019}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=157,\, \alpha = 6,\, \beta = \alpha^a\,\mathrm{mod}\,p=37
+        ;\] inoltre Bob mantiene segreto l'esponente $a\in (1,\,p-2]$.
+        \begin{enumerate}
+            \item Bob estrae il numero casuale segreto (nonce) $k\perp p-1$; usando lo stesso $k$, 
+                Bob calcola le seguenti firme $A_k$ per i messaggi $P_k$:
+                \[\begin{array}{ll}
+                    A_1=(r_1,\,s_1)=(26,\,32) & P_1=20\\
+                    A_2=(r_2,\,s_2)=(26,\,28) & P_2=24\\
+                    A_3=(r_3,\,s_3)=(26,\,28) & P_3=28
+                \end{array}\]
+                Verificare la validità delle tre firme.
+            \item Oscar intercetta i tre messaggi $(P_k,\,A_k)$; sulla base delle sole firme verificate valide 
+                (nel precedente quesito), calcolare $k$ e $a$ sfruttando l'attacco del nonce ripetuto.
+        \end{enumerate}
+
+        \Problem{02/07/2019}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=137,\, \alpha = 4,\, \beta = \alpha^a\,\mathrm{mod}\,p
+        ;\] inoltre Bob mantiene segreto l'esponente $a=129$.
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di El Gamal. 
+                Se $\alpha=4$ non risultasse una scelta valida, Bob userà invece $\alpha\in \{5,\,7\}$ 
+                (da verificare); se nemmeno questa scelta risultasse valida, Bob rinuncerà a proseguire 
+                (l'esercizio termina); calcolare $\beta$.
+            \item Bob estrae il numero casuale segreto (nonce) $k=29$; per questo valore di $k$, calcolare 
+                la firma $A$ del messaggio $P=101$.
+            \item Verificare se anche la firma $A^{\prime}=(r^{\prime}, s^{\prime})=(117,32)$ è valida per 
+                lo stesso messaggio $P=101$; se è valida, calcolare il valore di $k$ per cui è stata ricavata da Bob.
+        \end{enumerate}
+
+        \Problem{26/07/2019}
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=131,\, \alpha = 6,\, \beta = \alpha^a\,\mathrm{mod}\,p=2
+        ;\] inoltre Bob mantiene segreto l'esponente $a\in (1,\,p-2]$.
+        \begin{enumerate}
+            \item Bob estrae il numero casuale segreto (nonce) $k\perp p-1$; usando lo stesso $k$, 
+                Bob calcola le seguenti firme $A_k$ per i messaggi $P_k$:
+                \[\begin{array}{ll}
+                    A_1=(r_1,\,s_1)=(30,\,90) & P_1=10\\
+                    A_2=(r_2,\,s_2)=(30,\,45) & P_2=15\\
+                    A_3=(r_3,\,s_3)=(30,\,1) & P_3=20
+                \end{array}\]
+                Verificare la validità delle tre firme.
+            \item Oscar intercetta i tre messaggi $(P_k,\,A_k)$; sulla base delle sole firme verificate valide 
+                (nel precedente quesito), calcolare $k$ e $a$ sfruttando l'attacco del nonce ripetuto.
         \end{enumerate}
 
         \Problem{31/08/2019}
-        L'autorità fidata TA adotta lo schema di Blom per distribuire chiavi simmetriche di sessione 
-        $K_{i,\,j}\equiv K_{j,\,i}$ a 1000 utenti $U_{k}\,:\,k\in [1,\,\ldots,\,N]$ per la comunicazione tra essi; 
-        TA sceglie i valori segreti $a,\,b,\,c$ e pubblica $p$. Un provider fornisce canali sicuri da TA verso 
-        ciascun utente, ma a pagamento.
+        Bob adotta il sistema di firma elettronica di El Gamal e pubblica le seguenti informazioni: \[
+            p=127,\, \alpha = 4,\, \beta = \alpha^a\,\mathrm{mod}\,p
+        ;\] inoltre Bob mantiene segreto l'esponente $a=129$.
         \begin{enumerate}
-            \item Quanti numeri devono essere inviati in tutto da TA, secondo lo schema di Blom?
-            \item Se TA generasse centralmente tutte le possibili chiavi di sessione e le inviasse ai rispettivi 
-                utenti, quanti numeri dovrebbe inviare in tutto?
-            \item Si consideri il caso di tre soli utenti $A,\,b$ e $C$ con identificativi rispettivamente 
-                $r_A=100,\, r_B=200,\, r_C=30$; TA sceglie e tiene segreti $a,\,b,\,c$ e pubblica $p=1009$, 
-                tuttavia gli utenti $A$ e $B$ si mettono d'accordo e si scambiano le informazioni 
-                $a_A=929,\,a_B=838,\,b_A=173,\,b_B=276$. Calcolare i parametri segreti $a,\,b,\,c$, e poi le 
-                tre chiavi simmetriche $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
+            \item Verificare la correttezza dei dati forniti, in base alle ipotesi del metodo di El Gamal. 
+                Se $\alpha=4$ non risultasse una scelta valida, Bob userà invece $\alpha\in \{5,\,6\}$ 
+                (da verificare); se nemmeno questa scelta risultasse valida, Bob rinuncerà a proseguire 
+                (l'esercizio termina); calcolare $\beta$.
+            \item Bob estrae il numero casuale segreto (nonce) $k=25$; per questo valore di $k$, calcolare 
+                la firma $A$ del messaggio $P=15$.
+            \item Verificare se anche la firma $A^{\prime}=(r^{\prime}, s^{\prime})=(12,69)$ è valida per 
+                lo stesso messaggio $P=15$; se è valida, calcolare il valore di $k$ per cui è stata ricavata da Bob.
         \end{enumerate}

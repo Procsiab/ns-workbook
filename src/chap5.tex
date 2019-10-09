@@ -1,137 +1,91 @@
 %! TEX root = main.tex
-% Capitolo 5
 
-\chapter{Sequenze binarie pseudo-casuali}
+\chapter{Certificati e comunicazione sicura}
 
     \bigskip
-    \section{Generatore di Blum, Blum e Shub}
-        \Problem{27/02/2013}
-        Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
-        per $p=7,\, q=11,\, x=5$ e determinarne il periodo.
+    \section{Certificati X.509}
+        \Problem{08/02/2013}
+        Una autorità fidata TA rilascia ad Alice il certificato $C_A =$, 
+        nel per il quale:
+        \begin{itemize}
+            \item la cifratura e la firma usano il sistema RSA con $n=221$;
+            \item la chiave pubblica di TA è $K_{TA}=35$;
+            \item la chiave pubblica di Alice è $K_A=25$;
+            \item l'identificativo di Alice vale $A=200$;
+            \item la funzione di hash $\mathbb{H}(x,\,y)$ sia definita per $h,\,x,\,y \in \mathbb{Z}_{n}$ come: \[
+                    \mathbb{H}(x,\,y) = (x \oplus \text{SL}_3 (y) \oplus \text{SL}_4 (y)) \,\mathrm{mod}\,n
+                .\] La funzione $\text{SL}_{k} (h)$ scorre ciclicamente a sinistra di $k$ posizioni il valore 
+                binario $h$; infine siano $x,\,y,\,\mathbb{H}(x,\,y)$ parole di 8 bit.
+        \end{itemize}
+        \begin{enumerate}
+            \item Verificare la correttezza dei dati forniti secondo le ipotesi del sistema RSA.
+            \item Calcolare il certificato $C_{A}$ rilasciato da TA.
+            \item Verificare l'autenticità del certificato $C_{A}$.
+        \end{enumerate}
+
+    \bigskip
+    \section{Schema di Blom per pre-distribuzione}
+        \Problem{11/07/2013}
+        L'autorità fidata TA adotta lo schema di Blom per distribuire chiavi simmetriche a tre utenti $A,\,B$ e $C$, 
+        e pubblica $p=227$; Gli identificativi pubblici dei tre utenti sono rispettivamente  $r_A=100,\, r_B=101,\, r_C=102$.
+        \begin{enumerate}
+            \item Per i tre utenti TA sceglie e tiene segreti $a=10,\,b=15,\,c=50$; calcolare le tre chiavi simmetriche 
+                $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
+            \item Per i tre utenti, TA sceglie nuovi parametri segreti $a,\,b,\,c$; gli utenti $A$ e $B$ si accordano 
+                e si scambiano le informazioni $a_A=22,\, a_B=88,\, b_A=205,\, b_B=77$; calcolare i parametri segreti 
+                $a,\,b,\,c$, e poi le tre chiavi simmetriche $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
+        \end{enumerate}
+
+        \Problem{13/09/2013}
+        L'autorità fidata TA adotta lo schema di Blom per distribuire chiavi simmetriche a tre utenti $A,\,B$ e $C$, 
+        e pubblica $p=997$; Gli identificativi pubblici dei tre utenti sono rispettivamente  $r_A=111,\, r_B=222,\, r_C=333$.
+        \begin{enumerate}
+            \item Per i tre utenti TA sceglie e tiene segreti $a=501,\,b=955,\,c=370$; calcolare le tre chiavi simmetriche 
+                $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
+            \item Per i tre utenti, TA sceglie nuovi parametri segreti $a,\,b,\,c$; gli utenti $A$ e $B$ si accordano 
+                e si scambiano le informazioni $a_A=271,\, a_B=117,\, b_A=419,\, b_B=565$; calcolare i parametri segreti 
+                $a,\,b,\,c$, e poi le tre chiavi simmetriche $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
+        \end{enumerate}
 
         \Problem{01/09/2014}
-        Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
-        per $p=19,\, q=31,\, x=9$ e determinarne il periodo.
-
-        \Problem{17/07/2015}
-        Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
-        per $p=23,\, q=31,\, x=5$ e determinarne il periodo.
-
-        \Problem{04/07/2016}
+        L'autorità fidata TA adotta lo schema di Blom per distribuire chiavi simmetriche a tre utenti $A,\,B$ e $C$, 
+        e pubblica $p=569$; Gli identificativi pubblici dei tre utenti sono rispettivamente  $r_A=25,\, r_B=26,\, r_C=27$.
         \begin{enumerate}
-            \item Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
-                per $p=19,\, q=31,\, x=3$ e determinarne il periodo.
-            \item In base alla teoria, quali sono i valori possibili che può assumere il periodo $P = \pi(x_0)$ del 
-                generatore ottenuto al punto precedente, per valori arbitrari del seme $x_0 =x^2 \in\mathbb{Z}_n$?\\
-                Si ricorda che $\pi(x_0)$ divide $\lambda(\lambda(n))$, dove 
-                $\lambda(n)=\mathrm{mcm}\left(\{\varphi(p^{a_i}_i)\}\right)$ è la funzione di Carmichael.
+            \item Per i tre utenti TA sceglie e tiene segreti $a=501,\,b=369,\,c=111$; calcolare le tre chiavi simmetriche 
+                $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
+            \item Per i tre utenti, TA sceglie nuovi parametri segreti $a,\,b,\,c$; gli utenti $A$ e $B$ si accordano 
+                e si scambiano le informazioni $a_A=510,\, a_B=530,\, b_A=201,\, b_B=231$; calcolare i parametri segreti 
+                $a,\,b,\,c$, e poi le tre chiavi simmetriche $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
         \end{enumerate}
 
-        \Problem{09/02/2017}
+        \Problem{23/01/2019}
+        L'autorità fidata TA adotta lo schema di Blom per distribuire chiavi simmetriche di sessione 
+        $K_{i,\,j}\equiv K_{j,\,i}$ a 100 utenti $U_{k}\,:\,k\in [1,\,\ldots,\,N]$ per la comunicazione tra essi; 
+        TA sceglie i valori segreti $a,\,b,\,c$ e pubblica $p$. Un provider fornisce canali sicuri da TA verso 
+        ciascun utente, ma a pagamento.
         \begin{enumerate}
-            \item Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
-                per $p=23,\, q=43,\, x=6$ e determinarne il periodo.
-            \item In base alla teoria, quali sono i valori possibili che può assumere il periodo $P = \pi(x_0)$ del 
-                generatore ottenuto al punto precedente, per valori arbitrari del seme $x_0 =x^2 \in\mathbb{Z}_n$?\\
-                Si ricorda che $\pi(x_0)$ divide $\lambda(\lambda(n))$, dove 
-                $\lambda(n)=\mathrm{mcm}\left(\{\varphi(p^{a_i}_i)\}\right)$ è la funzione di Carmichael.
+            \item Quanti numeri devono essere inviati in tutto da TA, secondo lo schema di Blom?
+            \item Se TA generasse centralmente tutte le possibili chiavi di sessione e le inviasse ai rispettivi 
+                utenti, quanti numeri dovrebbe inviare in tutto?
+            \item Si consideri il caso di tre soli utenti $A,\,b$ e $C$ con identificativi rispettivamente 
+                $r_A=10,\, r_B=20,\, r_C=30$; TA sceglie e tiene segreti $a,\,b,\,c$ e pubblica $p=1009$, tuttavia gli utenti 
+                $A$ e $B$ si mettono d'accordo e si scambiano le informazioni $a_A=591,\,a_B=73,\,b_A=132,\,b_B=114$. 
+                Calcolare i parametri segreti $a,\,b,\,c$, e poi le tre chiavi simmetriche $K_{AB},\, K_{AC},\, K_{BC}$ 
+                distribuite da TA.
         \end{enumerate}
 
-        \Problem{09/02/2017}
+        \Problem{31/08/2019}
+        L'autorità fidata TA adotta lo schema di Blom per distribuire chiavi simmetriche di sessione 
+        $K_{i,\,j}\equiv K_{j,\,i}$ a 1000 utenti $U_{k}\,:\,k\in [1,\,\ldots,\,N]$ per la comunicazione tra essi; 
+        TA sceglie i valori segreti $a,\,b,\,c$ e pubblica $p$. Un provider fornisce canali sicuri da TA verso 
+        ciascun utente, ma a pagamento.
         \begin{enumerate}
-            \item Ricavare la sequenza binaria pseudo\nbdash casuale generata dall'algoritmo \emph{Blum-Blum-Shub} 
-                per $p=23,\, q=47,\, x=48$ e determinarne il periodo.
-            \item In base alla teoria, quali sono i valori possibili che può assumere il periodo $P = \pi(x_0)$ del 
-                generatore ottenuto al punto precedente, per valori arbitrari del seme $x_0 =x^2 \in\mathbb{Z}_n$?\\
-                Si ricorda che $\pi(x_0)$ divide $\lambda(\lambda(n))$, dove 
-                $\lambda(n)=\mathrm{mcm}\left(\{\varphi(p^{a_i}_i)\}\right)$ è la funzione di Carmichael.
-        \end{enumerate}
-
-    \bigskip
-    \section{Scrambler additivo}
-        \Problem{11/07/2013}
-        Si disegni lo schema di uno scrambler additivo avente polinomio caratteristico $1+x^2 +x^3 =x^5$. Quale 
-        sarà il massimo periodo della sequenza PRBS generata, avendo tutti ``0'' in ingresso?
-
-        \Problem{25/09/2013}
-        \begin{enumerate}
-            \item Si disegni la figura di uno scrambler additivo avente polinomio caratteristico $P(x)= 1+x +x^2 +x^4$. 
-                Si indichi la sequenza binaria in ingresso con $\{I_k\}$, quella in uscita con $\{U_k\}$ e quella 
-                pseudo\nbdash casuale generata con $\{R_k\}$.
-            \item Si inizializzi lo scrambler con  ``1'' negli elementi di ritardo $D_1$ e $D_2$ e con ``0'' negli elementi 
-                $D_3$ e $D_4$; lo si alimenti con una sequenza in ingresso di soli ``1''. Ricavare la sequenza $\{U_k\}$ 
-                all'uscita, evidenziando la sua periodicità: qual è il periodo di tale sequenza?
-            \item Verificare che il polinomio $P(x)$ sia irriducibile.
-        \end{enumerate}
-
-        \Problem{23/09/2016}
-        \begin{enumerate}
-            \item Si disegni la figura di uno scrambler additivo avente polinomio caratteristico $P(x)= 1+x +x^3 +x^4$. 
-                Si indichi la sequenza binaria in ingresso con $\{I_k\}$, quella in uscita con $\{U_k\}$ e quella 
-                pseudo\nbdash casuale generata con $\{R_k\}$.
-            \item Si inizializzi lo scrambler con  ``1'' negli elementi di ritardo $D_1$ e con ``0'' negli elementi 
-                $D_2$, $D_3$ e $D_4$; lo si alimenti con una sequenza in ingresso di soli ``1''. Ricavare la 
-                sequenza $\{U_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di tale sequenza?
-            \item Verificare che il polinomio $P(x)$ sia irriducibile.
-        \end{enumerate}
-
-    \bigskip
-    \section{Scrambler autosincronizzante}
-        \Problem{18/07/2014}
-        \begin{enumerate}
-            \item Si disegni la figura di uno scrambler autosincronizzante avente polinomio caratteristico 
-                $P(x)= 1 +x^2 +x^4$. Si indichi la sequenza binaria in ingresso con $\{I_k\}$ e quella in 
-                uscita con $\{U_k\}$.
-            \item Si inizializzi lo scrambler con  ``1'' negli elementi di ritardo $D_1$ e con ``0'' negli elementi 
-                $D_2$, $D_3$ e $D_4$; lo si alimenti con una sequenza in ingresso di soli ``1''. Ricavare la 
-                sequenza $\{U_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di tale sequenza?
-            \item Verificare che il polinomio $P(x)$ sia irriducibile.
-        \end{enumerate}
-
-        \Problem{03/07/2015}
-        \begin{enumerate}
-            \item Si disegni la figura di uno scrambler autosincronizzante avente polinomio caratteristico 
-                $P(x)= 1 +x^4$. Si indichi la sequenza binaria in ingresso con $\{I_k\}$ e quella in 
-                uscita con $\{U_k\}$.
-            \item Si inizializzi lo scrambler con  ``1'' negli elementi di ritardo $D_i$; lo si alimenti con una 
-                sequenza in ingresso di soli ``1''. Ricavare la sequenza $\{U_k\}$ all'uscita, evidenziando la sua 
-                periodicità: qual è il periodo di tale sequenza?
-            \item Verificare che il polinomio $P(x)$ sia irriducibile.
-        \end{enumerate}
-
-        \Problem{30/08/2018}
-        \begin{enumerate}
-            \item Si disegni la figura di uno scrambler autosincronizzante avente polinomio caratteristico 
-                $P(x)= 1 +x +x^3 +x^4$, alimentato da una sequenza di soli ``0'' in ingresso e usato come generatore PRBS. 
-                Si indichi la sequenza binaria in ingresso con $\{I_k\}=\{0\}$ e quella in uscita con $\{R_k\}$.
-            \item Si inizializzi lo scrambler con $D_i(i=1,\,2,\,3,\,4)$ con $\{1,\,0,\,0,\,0\}$ al passo $k=0$. 
-                Ricavare la sequenza $\{R_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di 
-                tale sequenza?
-            \item Verificare che il polinomio $P(x)$ sia irriducibile. Se lo fosse, quali sarebbero i valori 
-                possibili per il periodo?
-        \end{enumerate}
-
-        \Problem{11/02/2019}
-        \begin{enumerate}
-            \item Si disegni la figura di uno scrambler autosincronizzante avente polinomio caratteristico 
-                $P(x)= 1 +x +x^2 +x^4$, alimentato da una sequenza di soli ``0'' in ingresso e usato come generatore PRBS. 
-                Si indichi la sequenza binaria in ingresso con $\{I_k\}=\{0\}$ e quella in uscita con $\{R_k\}$.
-            \item Si inizializzi lo scrambler con $D_i(i=1,\,2,\,3,\,4)$ con $\{1,\,1,\,0,\,0\}$ al passo $k=0$. 
-                Ricavare la sequenza $\{R_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di 
-                tale sequenza?
-            \item Verificare che il polinomio $P(x)$ sia irriducibile. Se lo fosse, quali sarebbero i valori 
-                possibili per il periodo?
-        \end{enumerate}
-
-        \Problem{02/07/2019}
-        \begin{enumerate}
-            \item Si disegni lo schema di un generatore PRBS basato su registro a scorrimento LFSR, realizzato con uno 
-                scrambler autosincronizzante avente polinomio caratteristico $P(x)= 1 +x^2 +x^4$, alimentato da una 
-                sequenza di soli ``0'' in ingresso. Si indichi la sequenza binaria in ingresso con $\{I_k\}=\{0\}$ e 
-                quella in uscita con $\{R_k\}$.
-            \item Si inizializzi lo scrambler con $D_i(i=1,\,2,\,3,\,4)$ con $\{0,\,1,\,0,\,0\}$ al passo $k=0$. 
-                Ricavare la sequenza $\{R_k\}$ all'uscita, evidenziando la sua periodicità: qual è il periodo di 
-                tale sequenza?
-            \item Verificare che il polinomio $P(x)$ sia irriducibile. Se lo fosse, quali sarebbero i valori 
-                possibili per il periodo?
+            \item Quanti numeri devono essere inviati in tutto da TA, secondo lo schema di Blom?
+            \item Se TA generasse centralmente tutte le possibili chiavi di sessione e le inviasse ai rispettivi 
+                utenti, quanti numeri dovrebbe inviare in tutto?
+            \item Si consideri il caso di tre soli utenti $A,\,b$ e $C$ con identificativi rispettivamente 
+                $r_A=100,\, r_B=200,\, r_C=30$; TA sceglie e tiene segreti $a,\,b,\,c$ e pubblica $p=1009$, 
+                tuttavia gli utenti $A$ e $B$ si mettono d'accordo e si scambiano le informazioni 
+                $a_A=929,\,a_B=838,\,b_A=173,\,b_B=276$. Calcolare i parametri segreti $a,\,b,\,c$, e poi le 
+                tre chiavi simmetriche $K_{AB},\, K_{AC},\, K_{BC}$ distribuite da TA.
         \end{enumerate}
