@@ -1,8 +1,8 @@
 # ns-workbook
 
 [![Build Status](https://ci.procsiab.cf/api/badges/Procsiab/ns-workbook/status.svg)](https://ci.procsiab.cf/Procsiab/ns-workbook)
-[![Website](https://img.shields.io/website/https/book.procsiab.cf?down_message=offline&up_message=online)](https://book.procsiab.cf/)
-[![Static](https://img.shields.io/badge/licenza-GFDLv1.3-yellowgreen.svg)](https://github.com/Procsiab/psi-2019/blob/master/LICENSE)
+[![Website](https://img.shields.io/website?up_message=online&url=https%3A%2F%2Fbook.procsiab.cf%2Fns-workbook.pdf)](https://book.procsiab.cf/ns-workbook.pdf)
+[![License](https://img.shields.io/badge/license-GFDL-yellowgreen)](https://raw.githubusercontent.com/Procsiab/ns-workbook/master/LICENSE)
 
 Eserciziario per il corso di Sicurezza delle Reti del prof. Bregni (Politecnico di Milano), realizzato a partire daalla raccolta di testi delle prove di esame, dal 2013 al 2019.
 
